@@ -26,17 +26,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prototype_design_suite/models/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="53" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1920">
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prototype_design_suite/views/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,13 +44,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="account_views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="account_views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prototype_design_suite/views/account_views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="46" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.43811074" vertical-offset="451" max-vertical-offset="1065">
+            <state line="48" column="46" selection-start="1637" selection-end="1637" vertical-scroll-proportion="-10.346154" vertical-offset="451" max-vertical-offset="1065">
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="6" selection-start="335" selection-end="335" vertical-scroll-proportion="0.75" vertical-offset="0" max-vertical-offset="675">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,6 +149,7 @@
         <option value="$PROJECT_DIR$/prototype_design_suite/views/account_views.py" />
         <option value="$PROJECT_DIR$/prototype_design_suite/__init__.py" />
         <option value="$PROJECT_DIR$/prototype_design_suite/models/models.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -807,10 +806,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prototype_design_suite/views/account_views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="46" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.43811074" vertical-offset="451" max-vertical-offset="1065">
+        <state line="48" column="46" selection-start="1637" selection-end="1637" vertical-scroll-proportion="-10.346154" vertical-offset="451" max-vertical-offset="1065">
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="6" selection-start="335" selection-end="335" vertical-scroll-proportion="0.75" vertical-offset="0" max-vertical-offset="675">
+          <folding />
         </state>
       </provider>
     </entry>

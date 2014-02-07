@@ -1,6 +1,7 @@
 led / optimized / DLL files
 __pycache__/
 *.py[cod]
+*.pyc
 
 # C extensions
 *.so
@@ -33,20 +34,6 @@ pip-delete-this-directory.txt
 nosetests.xml
 coverage.xml
 
-# Translations
-*.mo
+# PyCharm
+.idea
 
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
-
-# Rope
-.ropeproject
-
-# Django stuff:
-*.log
-*.pot
-
-# Sphinx documentation
-docs/_build/
