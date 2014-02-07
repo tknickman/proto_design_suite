@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+
+    <title>{% block title %}{% endblock %} - SurveyMonkey Export</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    {% block script %}
+    {% endblock %}
+
+    <link rel="stylesheet" type="text/css" href="{{request.static_url('prototype_design_suite:static/css/style.css')}}" />
+    {% block css %}
+    {% endblock %}
+
+</head>
+
+
+
+<body>
+  <div class="wrapper">
+    <div>
+      <center>
+      <a href="{{request.route_url('homeRoute')}}"><img src="{{request.static_url('prototype_design_suite:static/images/sm_en.png')}}" alt="Home"/></a>
+      </center>
+      {% block content %}{% endblock %}
+    </div>
+
+    <div class="push"></div>
+  </div>
+
+  <div class="footer">
+    <div class="footer_content">
+      {% block footer %}{% endblock %}
+        <a href="{{request.route_url('homeRoute')}}">Home</a>
+        <a href="{{request.route_url('homeRoute')}}">Help</a>
+    </div>
+  </div>
+
+</body>
+</html>
+
+

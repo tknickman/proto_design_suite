@@ -1,0 +1,5 @@
+      [paste.app_factory]
+      main = prototype_design_suite:main
+      [console_scripts]
+      initialize_prototype_design_suite_db = prototype_design_suite.scripts.initializedb:main
+      
