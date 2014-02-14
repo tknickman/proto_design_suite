@@ -38,3 +38,5 @@ coverage.xml
 # PyCharm
 .idea
 
+
+/prototype_design_suite.sqlite
