@@ -43,7 +43,8 @@ def sign_in_out(request):
         headers = forget(request)
         return HTTPFound(location=request.route_url('home_route'), headers=headers)
 
-@view_config(route_name='account_add_route', renderer='registration.jinja2')
+
+@view_config(route_name='account_add_route', renderer='profile.jinja2')
 def account_add(request):
     #get the form from login
     user = UserData.get_user(request.params['email'])
@@ -55,17 +56,32 @@ def account_add(request):
         session.invalidate()
         session['email'] = request.params['email']
         UserData.addAccount(request.params['email'], request.params['password'], request.params['name'])
+        user_dict = {'email': request.params['email'], 'name': request.params['name']}
         headers = remember(request, request.params['email'])
-        return HTTPFound(location=request.route_url('home_route'), headers=headers)
+
+        return {'user_dict': user_dict, 'profile_name': request.params['name']}
 
 
 @view_config(route_name='profile_route', renderer='profile.jinja2')
 def profile(request):
-    return {}
+    session = request.session
+    user = UserData.get_user(session['email'])
+    if user[0]:
+        user_dict = {'email': user[1].user_email, 'name': user[1].user_name}
+        profile_name = user[1].user_name
+        return {'user_dict': user_dict, 'profile_name': profile_name}
+    else:
+        return {}
 
 @view_config(route_name='dashboard_route', renderer='dashboard.jinja2')
 def dashboard(request):
-    return {}
+    session = request.session
+    user = UserData.get_user(session['email'])
+    if user[0]:
+        profile_name = user[1].user_name
+        return {'profile_name': profile_name}
+    else:
+        return {}
 
 
 
