@@ -1,0 +1,145 @@
+{% extends "main_base.jinja2" %}
+
+{# page header prefex #}
+{% block title %}Profile{% endblock %}
+      	
+
+{% block page_header %}
+    <div class="row">
+        <div class="col-md-8" >
+            <div class="page-title"><h1>Profile</h1></div>
+        </div>
+        <div class="col-md-4">
+            <ol class="breadcrumb pull-right">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ol>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block page_content %}
+    <div class="row">
+    <!-- profile pic container starts here -->
+        <div class="col-sm-12 col-md-3">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <h2>Profile Picture</h2>
+                </div>
+                <div class="widget-container text-center">
+                    <img class="profile" src="img/team_2.jpg" alt="" />
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span>Edit Photo</span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">upload photo</a></li>
+                        <li><a href="#">remove photo</a></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- profile pic container End here -->
+
+        <!-- personal info container starts here -->
+        <div class="col-sm-12 col-md-9">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <h2>Personal Information</h2>
+                </div>
+                <div class="widget-container">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td class="cell-sm">First Name :</td>
+                                <td>Lorem</td>
+                            </tr>
+                            <tr>
+                                <td>Last Name :</td>
+                                <td>Impsumk</td>
+                            </tr>
+                            <tr>
+                                <td>Country :</td>
+                                <td>United States</td>
+                            </tr>
+                            <tr>
+                                <td>Birthday :</td>
+                                <td>14th february, 1920</td>
+                            </tr>
+                            <tr>
+                                <td>Occupation :</td>
+                                <td>Web Developer</td>
+                            </tr>
+                            <tr>
+                                <td> Email :</td>
+                                <td>lorem@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td> Mobile :</td>
+                                <td>9892545254</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- personal info container End here -->
+    </div>
+
+    <div class="row">
+        <!-- skills container starts here -->
+        <div class="col-sm-12 col-md-3">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <h2>Skills</h2>
+                </div>
+                <div class="widget-container vital-stats">
+                    <label>99% Html</label>
+                    <div class="progress progress-striped active">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%">
+                        <span class="sr-only">99% Complete (success)</span>
+                      </div>
+                    </div>
+
+                    <label>95% CSS</label>
+                    <div class="progress progress-striped active">
+                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                        <span class="sr-only">95% Complete</span>
+                      </div>
+                    </div>
+
+                    <label>60% JavaScript</label>
+                    <div class="progress progress-striped active">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                        <span class="sr-only">60% Complete (warning)</span>
+                      </div>
+                    </div>
+
+                    <label>40% PHP</label>
+                    <div class="progress progress-striped active">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                        <span class="sr-only">40% Complete (danger)</span>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- skills container end here -->
+
+        <!-- about us container starts here -->
+        <div class="col-sm-12 col-md-9">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <h2>About Us</h2>
+                </div>
+                <div class="widget-container">
+                    <p> Lorem ipsum dolor sit amet, Quisque egestas nisl id lectus facilisis scelerisque? Proin rhoncus dui at ligula vestibulum ut facilisis ante sodales! Suspendisse potenti. Aliquam tincidunt sollicitudin sem nec ultrices. Sed at mi velit. Ut egestas tempor est, in cursus enim venenatis eget! Nulla quis ligula ipsum. Donec vitae ultrices Integer sed dolor erat. Fusce erat ipsum, varius vel euismod sed, tristique et lectus? Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque? Proin rhoncus dui at ligula vestibulum ut facilisis ante sodales! Suspendisse potenti. Aliquam tincidunt sollicitudin sem nec ultrices. Sed at mi velit. Ut egestas tempor est, in cursus enim venenatis eget! Nulla quis ligula ipsum. Donec vitae ultrices dolor?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor. Vestibulum ullamcorper, odio sed rhoncus imperdiet, enim elit sollicitudin orci, eget dictum leo mi nec lectus. Nam commodo turpis id lectus scelerisque vulputate. ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor. Vestibulum ullamcorper, odio sed rhoncus imperdiet, enim elit sollicitudin orci, eget dictum leo mi nec lectus. Nam commodo turpis id lectus scelerisque vulputate. Integer sed dolor erat. Fusce erat ipsum, varius vel euismod sed, tristique et lectus? Etiam egestas fringilla enim.</p>
+                </div>
+            </div>
+        </div>
+        <!-- about us container End here -->
+    </div>
+{% endblock %}

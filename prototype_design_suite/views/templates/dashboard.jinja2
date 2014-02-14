@@ -1,0 +1,72 @@
+{% extends "main_base.jinja2" %}
+
+{# page header prefex #}
+{% block title %}Dashboard{% endblock %}
+
+{% block script %}
+    <!-- Data-Table style -->
+    <link href="{{request.static_url('prototype_design_suite:static/css/jquery.dataTables.css')}}" rel="stylesheet">
+{% endblock %}
+
+
+{% block page_header %}
+    <div class="row">
+        <div class="col-md-8" >
+            <div class="page-title"><h1>Dashboard</h1></div>
+        </div>
+        <div class="col-md-4">
+            <ol class="breadcrumb pull-right">
+                <li><a href="/dashboard">Dashboard</a></li>
+            </ol>
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_content %}
+    <!-- Order table Starts here -->
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <h2>Order List</h2>
+                </div>
+                <div class="widget-container table-responsive">
+                    <table class="table table-hover table-striped order-table table-green">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Project Name</th>
+                            <th>Collaborators</th>
+                            <th>Last Edit</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Google</td>
+                            <td>Mark Z</td>
+                            <td>$ 9984.00</td>
+                            <td>
+                                <button type="button" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-eye-open"></i>View</button>
+                                <button type="button" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-pencil"></i>Edit</button>
+                                <button type="button" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-share-alt"></i>Share</button>
+                                <button type="button" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-remove"></i>Delete</button>
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Order Table ends here -->
+{% endblock %}
+
+
+	      
+
+				
+				

@@ -10,6 +10,8 @@ def includeme(config):
     add_route('registration_route', '/registration')
     add_route('auth_route', '/sign/{action}')
     add_route('account_add_route', '/add_account')
+    add_route('profile_route', '/profile')
+    add_route('dashboard_route', '/dashboard')
 
 
     ###############################

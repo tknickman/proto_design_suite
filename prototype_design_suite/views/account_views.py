@@ -59,6 +59,13 @@ def account_add(request):
         return HTTPFound(location=request.route_url('home_route'), headers=headers)
 
 
+@view_config(route_name='profile_route', renderer='profile.jinja2')
+def profile(request):
+    return {}
+
+@view_config(route_name='dashboard_route', renderer='dashboard.jinja2')
+def dashboard(request):
+    return {}
 
 
 
