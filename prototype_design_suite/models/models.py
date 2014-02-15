@@ -86,6 +86,7 @@ class PasswordReset(Base):
     key = Column(String, default = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(50)))
     requested = Column(DateTime, default=datetime.datetime.now)
 
+
     @classmethod
     def logRequest(cls, old_email):
         data = PasswordReset(email=old_email)

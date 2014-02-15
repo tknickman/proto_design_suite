@@ -8,15 +8,17 @@ from prototype_design_suite.models.models import (
     )
 
 
+
+
 #home
 @view_config(route_name='home_route', renderer='coming_soon.jinja2')
 def home(request):
-    return {}
+    return HTTPFound(location=request.route_url('login_route'))
 
 #account management
 @view_config(route_name='registration_route', renderer='registration.jinja2')
 def registration(request):
-    return {}
+    return{}
 
 #account management
 @view_config(route_name='login_route', renderer='login.jinja2')
@@ -31,14 +33,14 @@ def sign_in_out(request):
     if email:
         user = UserData.by_email(email)
         if user and user.verify_password(request.POST.get('password')):
-            headers = remember(request, user.email)
+            headers = remember(request, user.user_email)
             session = request.session
             session.invalidate()
-            session['username'] = email
-            return HTTPFound(location=request.route_url('startRoute'), headers=headers)
+            session['email'] = email
+            return HTTPFound(location=request.route_url('dashboard_route'), headers=headers)
         else:
             headers = forget(request)
-            return {"error": "Invalid email and password!"}
+            return {"invalid": "login"}
     else:
         headers = forget(request)
         return HTTPFound(location=request.route_url('home_route'), headers=headers)
@@ -52,17 +54,17 @@ def account_add(request):
     if user[0]:
         return {"error": "Email already in use!"}
     else:
+        headers = remember(request, request.params['email'])
         session = request.session
         session.invalidate()
         session['email'] = request.params['email']
         UserData.addAccount(request.params['email'], request.params['password'], request.params['name'])
-        user_dict = {'email': request.params['email'], 'name': request.params['name']}
         headers = remember(request, request.params['email'])
+        return HTTPFound(location=request.route_url('dashboard_route'), headers=headers)
 
-        return {'user_dict': user_dict, 'profile_name': request.params['name']}
 
 
-@view_config(route_name='profile_route', renderer='profile.jinja2')
+@view_config(route_name='profile_route', renderer='profile.jinja2', permission='loggedin')
 def profile(request):
     session = request.session
     user = UserData.get_user(session['email'])
@@ -73,7 +75,7 @@ def profile(request):
     else:
         return {}
 
-@view_config(route_name='dashboard_route', renderer='dashboard.jinja2')
+@view_config(route_name='dashboard_route', renderer='dashboard.jinja2', permission='loggedin')
 def dashboard(request):
     session = request.session
     user = UserData.get_user(session['email'])
@@ -82,7 +84,4 @@ def dashboard(request):
         return {'profile_name': profile_name}
     else:
         return {}
-
-
-
 

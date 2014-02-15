@@ -3,7 +3,7 @@
 {# page header prefex #}
 {% block title %}Login{% endblock %}
 
-      	
+
 {% block page_content %}
     <br/>
     <br/>
@@ -17,12 +17,15 @@
                 <form action="{{request.route_url('auth_route',action='in')}}" method="post" class="form-stacked">
                         <fieldset>
                             <div class="form-group">
-                                <input type="text" id="isignup_username" class="form-control" placeholder="Username">
-                                <!--<span class="help-block error">Invalid username or password</span>-->
+                                <input type="text" id="isignup_email" name="email" class="form-control" placeholder="Email">
+                                {% if invalid %}
+                                    <span class="help-block error">Invalid email or password</span>
+                                {% endif %}
+                                <!--<span class="help-block error">Invalid email or password</span>-->
                             </div>
                             <div class="form-group">
                               <div class="input">
-                                <input type="password" id="isignup_password" class="form-control" placeholder="Password"   />
+                                <input type="password" id="isignup_password" name="password" class="form-control" placeholder="Password"   />
                               </div>
                             </div>
 

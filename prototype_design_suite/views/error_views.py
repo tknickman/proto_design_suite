@@ -3,16 +3,16 @@ from pyramid.view import forbidden_view_config, notfound_view_config, view_confi
 #error
 @view_config(route_name='errorRoute', renderer='error.jinja2')
 def error(request):
-    return {'error': "Something went wrong, please try again!"}
+    return {'code': "lol"}
 
 #access forbidden
 @forbidden_view_config(renderer='error.jinja2')
 def access_forbidden(request):
     request.response.status = 403
-    return {'error': "You do not have access to this page!"}
+    return {'code': "403", 'text': "Access Denied"}
 
 #not found
 @notfound_view_config(renderer='error.jinja2')
 def not_found(request):
     request.response.status = 404
-    return {'error': "This page doesn't exist!"}
+    return {'code': "404", 'text': "Page Not Found"}

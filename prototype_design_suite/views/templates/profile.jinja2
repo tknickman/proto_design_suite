@@ -56,26 +56,38 @@
                                 <td class="cell-sm">Name :</td>
                                 <td>{{ user_dict['name'] }}</td>
                             </tr>
+
                             <tr>
                                 <td>Country :</td>
                                 <td>United States</td>
                             </tr>
-                            <tr>
-                                <td>Birthday :</td>
-                                <td>14th february, 1920</td>
-                            </tr>
-                            <tr>
-                                <td>Occupation :</td>
-                                <td>Web Developer</td>
-                            </tr>
+
+                            {% if user_dict['birthday'] %}
+                                <tr>
+                                    <td>Birthday :</td>
+                                    <td>{{ user_dict['birthday'] }}</td>
+                                </tr>
+                            {% endif %}
+
+                            {% if user_dict['occupation'] %}
+                                <tr>
+                                    <td>Occupation :</td>
+                                    <td>{{ user_dict['occupation'] }}</td>
+                                </tr>
+                            {% endif %}
+
                             <tr>
                                 <td> Email :</td>
                                 <td>{{ user_dict['email'] }}</td>
                             </tr>
-                            <tr>
-                                <td> Mobile :</td>
-                                <td>9892545254</td>
-                            </tr>
+
+                            {% if user_dict['phone'] %}
+                                <tr>
+                                    <td>Phone :</td>
+                                    <td>{{ user_dict['phone'] }}</td>
+                                </tr>
+                            {% endif %}
+
                         </tbody>
                     </table>
                 </div>
