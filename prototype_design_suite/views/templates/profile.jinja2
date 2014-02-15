@@ -23,7 +23,7 @@
     <div class="row">
 
         <!-- personal info container starts here -->
-        <div class="col-sm-12 col-md-9">
+        <div class="col-sm-12 col-md-6">
             <div class="widget-box">
                 <div class="widget-title">
                     <h2>Personal Information</h2>
@@ -38,7 +38,7 @@
 
                             <tr>
                                 <td>Country :</td>
-                                <td>United States</td>
+                                <td>{{ user_dict['country'] }}</td>
                             </tr>
 
                             {% if user_dict['birthday'] %}
@@ -86,22 +86,22 @@
 
     <div class="row">
         <!-- skills container starts here -->
-        <div class="col-sm-12 col-md-3">
+        <div class="col-sm-12 col-md-6">
             <div class="widget-box">
                 <div class="widget-title">
                     <h2>Stats</h2>
                 </div>
-                <div class="widget-container vital-stats">
-                    <label>Designs</label>
+                <div class="widget-container">
+                    <label>Designs - 10</label>
                     <div class="progress progress-striped active">
-                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%">
+                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                         <span class="sr-only">99% Complete</span>
                       </div>
                     </div>
 
-                    <label>Contributions</label>
+                    <label>Contributions - 50</label>
                     <div class="progress progress-striped active">
-                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                         <span class="sr-only">95% Complete</span>
                       </div>
                     </div>
@@ -111,18 +111,5 @@
         </div>
         <!-- skills container end here -->
 
-        <!-- about us container starts here -->
-        <div class="col-sm-12 col-md-6">
-            <div class="widget-box">
-                <div class="widget-title">
-                    <h2>About Me</h2>
-                </div>
-                <div class="widget-container">
-                    <p> Lorem ipsum dolor sit amet, Quisque egestas nisl id lectus facilisis scelerisque? Proin rhoncus dui at ligula vestibulum ut facilisis ante sodales! Suspendisse potenti. Aliquam tincidunt sollicitudin sem nec ultrices. Sed at mi velit. Ut egestas tempor est, in cursus enim venenatis eget! Nulla quis ligula ipsum. Donec vitae ultrices Integer sed dolor erat. Fusce erat ipsum, varius vel euismod sed, tristique et lectus? Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque? Proin rhoncus dui at ligula vestibulum ut facilisis ante sodales! Suspendisse potenti. Aliquam tincidunt sollicitudin sem nec ultrices. Sed at mi velit. Ut egestas tempor est, in cursus enim venenatis eget! Nulla quis ligula ipsum. Donec vitae ultrices dolor?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor. Vestibulum ullamcorper, odio sed rhoncus imperdiet, enim elit sollicitudin orci, eget dictum leo mi nec lectus. Nam commodo turpis id lectus scelerisque vulputate. ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor. Vestibulum ullamcorper, odio sed rhoncus imperdiet, enim elit sollicitudin orci, eget dictum leo mi nec lectus. Nam commodo turpis id lectus scelerisque vulputate. Integer sed dolor erat. Fusce erat ipsum, varius vel euismod sed, tristique et lectus? Etiam egestas fringilla enim.</p>
-                </div>
-            </div>
-        </div>
-        <!-- about us container End here -->
     </div>
 {% endblock %}
