@@ -34,6 +34,7 @@ class UserData(Base):
     user_email = Column(String, unique=True, nullable=False)
     user_password = Column(String, nullable=False)
     user_name = Column(String, nullable=False)
+    user_country = Column(String, nullable=False)
     user_reg_date = Column(DateTime, default=datetime.datetime.now())
     user_last_logged_on = Column(DateTime, default=datetime.datetime.now())
 
@@ -45,9 +46,9 @@ class UserData(Base):
         return pwd_context.verify(password, self.user_password)
 
     @classmethod
-    def addAccount(cls, new_user_email, new_user_password, new_user_name):
+    def addAccount(cls, new_user_email, new_user_password, new_user_name, new_user_country):
         hash = pwd_context.encrypt(new_user_password)
-        user = UserData(user_email=new_user_email, user_password=hash, user_name=new_user_name)
+        user = UserData(user_email=new_user_email, user_password=hash, user_name=new_user_name, user_country=new_user_country)
         DBSession.add(user)
 
     @classmethod

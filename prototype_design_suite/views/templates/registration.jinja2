@@ -13,17 +13,32 @@
         <div class="col-sm-12 col-md-4 col-md-offset-4 sign-in animated flipInY">
             <div id="signup" class="lock-screen" >
                 <div class="title icon-space"><i class="glyphicon glyphicon-lock"></i>Registration</div>
-                <form action="/add_account" method="post" class="form-stacked">
+                <form action="{{request.route_url('account_add_route')}}" method="post" class="form-stacked">
                     <fieldset>
                         <div class="form-group">
-                           <label class="control-label" for="Name">Name</label>
+
+                            {% if invalid_name %}
+                                <span class="help-block error"> {{ invalid_name }} </span>
+                            {% endif %}
+
+                           <label class="control-label" for="name">Name</label>
                            <input type="text" id="Name" name="name" class="form-control" placeholder="Name">
                         </div>
                         <div class="form-group">
+
+                            {% if invalid_email %}
+                                <span class="help-block error"> {{ invalid_email }} </span>
+                            {% endif %}
+
                             <label class="control-label" for="email">Your Email Address</label>
                             <input type="email" id="email" name="email"  class="form-control" placeholder="Email" >
                         </div>
                         <div class="form-group">
+
+                            {% if invalid_password %}
+                                <span class="help-block error"> {{ invalid_password }} </span>
+                            {% endif %}
+
                             <label class="control-label" for="password">Enter Password</label>
                               <input type="password" id="password" name="password" class="form-control" placeholder="Password"   />
                         </div>
@@ -32,11 +47,15 @@
                               <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Confirm Password"   />
                         </div>
 
-                        #TODO: Fix country on form submit
-
                         <div class="form-group">
-                            <label class="control-label">Country</label>
-                                <select class="form-control">
+
+                            {% if invalid_country %}
+                                <span class="help-block error"> {{ invalid_country }} </span>
+                            {% endif %}
+
+                            <label class="control-label" for="country">Country</label>
+                                <select class="form-control" name="country">
+                                    <option value="none"></option>
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Åland Islands">Åland Islands</option>
                                     <option value="Albania">Albania</option>
