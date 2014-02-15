@@ -1,5 +1,7 @@
 from pyramid.httpexceptions import HTTPNotFound, HTTPFound
 
+from webhelpers.date import time_ago_in_words
+
 from pyramid.view import view_config
 from pyramid.security import *
 
@@ -69,7 +71,8 @@ def profile(request):
     session = request.session
     user = UserData.get_user(session['email'])
     if user[0]:
-        user_dict = {'email': user[1].user_email, 'name': user[1].user_name}
+        print user[1].user_reg_date
+        user_dict = {'email': user[1].user_email, 'name': user[1].user_name, 'reg_date': user[1].user_reg_date.ctime(), 'last_log_in': time_ago_in_words(user[1].user_last_logged_on, granularity='minute')}
         profile_name = user[1].user_name
         return {'user_dict': user_dict, 'profile_name': profile_name}
     else:

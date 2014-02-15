@@ -15,7 +15,8 @@ requires = [
     'zope.sqlalchemy',
     'waitress',
     'pyramid_jinja2',
-    'passlib'
+    'passlib',
+    'webhelpers'
     ]
 
 setup(name='prototype_design_suite',

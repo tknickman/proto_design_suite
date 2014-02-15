@@ -34,8 +34,8 @@ class UserData(Base):
     user_email = Column(String, unique=True, nullable=False)
     user_password = Column(String, nullable=False)
     user_name = Column(String, nullable=False)
-    user_reg_date = Column(DateTime, default=datetime.datetime.utcnow)
-    user_last_logged_on = Column(DateTime, default=datetime.datetime.utcnow)
+    user_reg_date = Column(DateTime, default=datetime.datetime.now())
+    user_last_logged_on = Column(DateTime, default=datetime.datetime.now())
 
     @classmethod
     def by_email(cls, email):

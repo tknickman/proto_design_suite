@@ -2,9 +2,9 @@ Metadata-Version: 1.1
 Name: prototype-design-suite
 Version: 0.0
 Summary: prototype_design_suite
-Home-page: UNKNOWN
-Author: UNKNOWN
-Author-email: UNKNOWN
+Home-page: www.thomasknickman.com
+Author: Thomas E. Knickman
+Author-email: tknickman@gmail.com
 License: UNKNOWN
 Description: prototype_design_suite README
         ==================
@@ -27,7 +27,6 @@ Description: prototype_design_suite README
         
         -  Initial version
         
-Keywords: web wsgi bfg pylons pyramid
 Platform: UNKNOWN
 Classifier: Programming Language :: Python
 Classifier: Framework :: Pyramid
