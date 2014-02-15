@@ -29,7 +29,7 @@ def login(request):
 
 
 @view_config(route_name='auth_route', match_param='action=in', renderer='login.jinja2', request_method='POST')
-@view_config(route_name='auth_route', match_param='action=out', renderer='coming_soon.jinja2')
+@view_config(route_name='auth_route', match_param='action=out', renderer='login.jinja2')
 def sign_in_out(request):
     email = request.POST.get('email')
     if email:
@@ -48,21 +48,44 @@ def sign_in_out(request):
         return HTTPFound(location=request.route_url('home_route'), headers=headers)
 
 
-@view_config(route_name='account_add_route', renderer='profile.jinja2')
+@view_config(route_name='account_add_route', renderer='registration.jinja2', request_method='POST')
 def account_add(request):
-    #get the form from login
-    user = UserData.get_user(request.params['email'])
-    #make sure the user doesn't already exist
-    if user[0]:
-        return {"error": "Email already in use!"}
+    #get the email
+    email = request.POST.get('email')
+    #make sure it isn't blank
+    if email == '':
+        return {"invalid_email": "Email cannot be blank"}
     else:
-        headers = remember(request, request.params['email'])
-        session = request.session
-        session.invalidate()
-        session['email'] = request.params['email']
-        UserData.addAccount(request.params['email'], request.params['password'], request.params['name'])
-        headers = remember(request, request.params['email'])
-        return HTTPFound(location=request.route_url('dashboard_route'), headers=headers)
+        #make sure the user doesn't already exist
+        user = UserData.get_user(email)
+        if user[0]:
+            return {"invalid_email": "Email already in use"}
+        else:
+
+            #make sure nothing is blank
+            if request.POST.get('name') == '':
+                return {"invalid_name": "Name cannot be blank"}
+            if request.POST.get('password') == '':
+                return {"invalid_password": "Password cannot be blank"}
+            if request.POST.get('confirm_password') == '':
+                return {"invalid_password": "Password confirmation cannot be blank"}
+            if request.POST.get('country') == 'none':
+                return {"invalid_country": "Country cannot be none"}
+
+
+            #check passwords
+            if request.POST.get('password') != request.POST.get('confirm_password'):
+                return {"invalid_password": "Passwords do not match"}
+            else:
+                #add the header info and start a session
+                headers = remember(request, email)
+                session = request.session
+                session.invalidate()
+                session['email'] = email
+
+                #add the new user
+                UserData.addAccount(email, request.POST.get('password'),request.POST.get('name'), request.POST.get('country'))
+                return HTTPFound(location=request.route_url('dashboard_route'), headers=headers)
 
 
 
@@ -72,7 +95,14 @@ def profile(request):
     user = UserData.get_user(session['email'])
     if user[0]:
         print user[1].user_reg_date
-        user_dict = {'email': user[1].user_email, 'name': user[1].user_name, 'reg_date': user[1].user_reg_date.ctime(), 'last_log_in': time_ago_in_words(user[1].user_last_logged_on, granularity='minute')}
+        user_dict = {
+            'email': user[1].user_email,
+            'name': user[1].user_name,
+            'reg_date': user[1].user_reg_date.ctime(),
+            'last_log_in': time_ago_in_words(user[1].user_last_logged_on, granularity='minute'),
+            'country': user[1].user_country
+        }
+
         profile_name = user[1].user_name
         return {'user_dict': user_dict, 'profile_name': profile_name}
     else:
